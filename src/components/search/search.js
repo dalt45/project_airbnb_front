@@ -7,6 +7,7 @@ import axios from 'axios';
 class SearchForm extends Component {
     state = {
         search: "",
+        token:"",
     }
 
     handleSearch = (event) => {
@@ -18,10 +19,9 @@ class SearchForm extends Component {
     
     handleClick = (event) => {
         event.preventDefault();
-        const url = "http://localhost:3000/";
-        axios.get(url, {user: this.state}).then((response) => {
+        const url = "http://localhost:3000/search?city="+this.state.search;
+        axios.get(url,{headers:{'token':this.props.token}}).then((response) => {
             console.log(response);
-            this.props.handleUser(true,response.token);
         }).catch((error) => {
             console.log(error);
         })

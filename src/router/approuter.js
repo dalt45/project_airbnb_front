@@ -53,7 +53,7 @@ class AppRouter extends Component {
                         <PublicRoute path="/signup" component={SignUp} handleUser={this.handleUser} isLoggedIn={this.state.isLoggedIn}/>
                         <PublicRoute path="/login" component={Login} handleUser={this.handleUser} isLoggedIn={this.state.isLoggedIn}/>
                         <PrivateRoute path="/reservation" component={MakeReservation} isLoggedIn={this.state.isLoggedIn}/>
-                        <PrivateRoute path="/search" component={Search} isLoggedIn={this.state.isLoggedIn}/>
+                        <PrivateRoute path="/search" component={Search} isLoggedIn={this.state.isLoggedIn} token={this.state.token}/>
 
 
                     </Switch>
