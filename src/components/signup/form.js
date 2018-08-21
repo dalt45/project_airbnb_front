@@ -60,6 +60,7 @@ class SignUpForm extends Component {
         const url = "http://localhost:3000/users/signup";
         axios.post(url, {user: this.state}).then((response) => {
             console.log(response);
+            this.props.handleUser(true,response.token);
         }).catch((error) => {
             console.log(error);
         })

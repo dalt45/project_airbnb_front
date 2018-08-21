@@ -5,8 +5,9 @@ class Signup extends Component {
     render(){
         return (
             <div>
-                <SignupForm />
+                <SignupForm handleUser={this.props.handleUser}/>
             </div>
+
         )
     }
 }
