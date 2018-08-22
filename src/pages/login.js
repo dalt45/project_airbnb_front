@@ -2,10 +2,10 @@ import React,{Component} from 'react';
 import LoginForm from '../components/login/form'
 
 class Login extends Component {
-    render(){
+    render(){ 
         return (
             <div>
-                <LoginForm />
+                <LoginForm handleUser={this.props.handleUser}/>
             </div>
         )
     }

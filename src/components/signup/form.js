@@ -35,12 +35,6 @@ class SignUpForm extends Component {
         })
     }
 
-    handleLastName = (event) => {
-        console.log(this.state);
-        this.setState({
-            last_name: event.target.value
-        })
-    }
 
     handlePassword = (event) => {
         console.log(this.state);
@@ -60,7 +54,7 @@ class SignUpForm extends Component {
         const url = "http://localhost:3000/users/signup";
         axios.post(url, {user: this.state}).then((response) => {
             console.log(response);
-            this.props.handleUser(true,response.token);
+            this.props.handleUser(true,response.data.token);
         }).catch((error) => {
             console.log(error);
         })

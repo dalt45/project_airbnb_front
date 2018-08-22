@@ -9,8 +9,7 @@ class LoginForm extends Component {
     
     state = {
         email: "",
-        name:"",
-        passwordState:""
+        password:""
     }
 
     validateEmail = (mail) => {
@@ -36,8 +35,9 @@ class LoginForm extends Component {
         const url = "http://localhost:3000/users/login";
         if(!this.validateEmail(this.state.email)) console.log("No es email válido")
         else{
-        axios.post(url, {user: this.state}).then((response) => {
+        axios.post(url, {user:this.state}).then((response) => {
             console.log(response);
+            this.props.handleUser(true,response.data.token);
         }).catch((error) => {
             console.log(error);
         })

@@ -32,7 +32,8 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use:['css-loader','style-loader']
+                use:[,'style-loader','css-loader']
+                //primero el style loader por que carga los archivos y el css loader es el traspilador
             },
             {
                 test: /\.(jpg|png|bmp|gif|svg)$/,
