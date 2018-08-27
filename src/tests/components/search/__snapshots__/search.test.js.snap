@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SearchForm page correctly 1`] = `
+<div>
+  <WithStyles(Card)>
+    <TextField
+      id="city"
+      onChange={[Function]}
+      required={false}
+      select={false}
+      value="guadalajara"
+    />
+    <WithStyles(Button)
+      color="secondary"
+      onClick={[Function]}
+      variant="contained"
+    >
+      Buscar
+    </WithStyles(Button)>
+  </WithStyles(Card)>
+</div>
+`;

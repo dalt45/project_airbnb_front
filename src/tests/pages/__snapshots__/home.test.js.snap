@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should call onclick function 1`] = `
+<div
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <p>
+    Home
+  </p>
+</div>
+`;
+
+exports[`should render Home page correctly 1`] = `
+<div>
+  <p>
+    Home
+  </p>
+</div>
+`;

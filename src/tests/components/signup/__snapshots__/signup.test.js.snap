@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SearchForm page correctly 1`] = `
+<div>
+  <WithStyles(Card)>
+    <p>
+      Registrate en Airbnb Clon
+    </p>
+    <TextField
+      id="email"
+      onChange={[Function]}
+      required={false}
+      select={false}
+      value="daniel@gmail.com"
+    />
+    <TextField
+      id="name"
+      onChange={[Function]}
+      required={false}
+      select={false}
+      value=""
+    />
+    <TextField
+      id="last_name"
+      onChange={[Function]}
+      required={false}
+      select={false}
+      value=""
+    />
+    <TextField
+      id="password"
+      onChange={[Function]}
+      required={false}
+      select={false}
+      value=""
+    />
+    <TextField
+      id="date"
+      onChange={[Function]}
+      required={false}
+      select={false}
+      type="date"
+      value=""
+    />
+    <WithStyles(Button)
+      color="secondary"
+      onClick={[Function]}
+      variant="contained"
+    >
+      Registrate
+    </WithStyles(Button)>
+  </WithStyles(Card)>
+</div>
+`;

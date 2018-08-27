@@ -1,0 +1,6 @@
+Instalar Jest
+Ideal tener un coverage superior al 40%, siempre poner en la misma carpeta donde esta tus otros archivos.
+
+Enzyme trabajar con unit test para cada componente especificamente.
+
+Shallow es para trabajar con el render de los componentes
