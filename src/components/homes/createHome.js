@@ -3,9 +3,11 @@ import Card from '@material-ui/core/Card'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import MyMapComponent from '../maps/homeMap'
 
 
-class SignUpForm extends Component {
+
+class CreateHomes extends Component {
     
     state = {
         title: "",
@@ -18,6 +20,17 @@ class SignUpForm extends Component {
         beds:"",
         datesNotAvailable:"",
         city:"",
+        geoSearchArray:""
+    }
+
+    returnCoordinates = () => {
+        
+    }
+
+    makeGeoArray = () => {
+        let geoArray = this.state.address.split(" ");
+        geoArray.push(this.state.city);
+        this.setState({geoSearchArray:geoArray})
     }
 
     handleTitle = (event) => {
@@ -31,6 +44,7 @@ class SignUpForm extends Component {
         this.setState({
             address: event.target.value
         })
+        makeGeoArray();
     }
 
     handleCapacity = (event) => {
@@ -65,13 +79,16 @@ class SignUpForm extends Component {
     this.setState({
         beds: event.target.value
     })
+    }
+
    //To do: Pending handle dates (calendar)
    handleCity= (event) => {
     console.log(this.state);
     this.setState({
         city: event.target.value
     })
-
+    makeGeoArray();
+    }
 
     handleClick = (event) => {
         event.preventDefault();
@@ -84,9 +101,12 @@ class SignUpForm extends Component {
         })
     }
 
+    
 
     render(){
+
         return(
+
             <div>
                 <Card>
                     <p>Registrate tu casa</p> 
@@ -129,14 +149,13 @@ class SignUpForm extends Component {
                         color="secondary"
                         variant="contained"
                         onClick={this.handleClick}
-                    >
-                    Submit
+                    >Submit
                     </Button>
                 </Card>
-                
+                <MyMapComponent isMarkerShown={true}/>
             </div>
         )
     }
 }
 
-export default SignUpForm;
+export default CreateHomes;
