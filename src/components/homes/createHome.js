@@ -88,14 +88,13 @@ class CreateHomes extends Component {
 
     handleClick = (event) => {
         const url = "http://localhost:3000/homes";
-        console.log(this.props.token);
         const options = {
             method: 'POST',
-            headers: { token : this.props.token },
-            data: {home:this.state},
-            url,
+            headers: {token: this.props.token },
+            data: {home: this.state},
+            url
           };
-        axios.post(options).then((response) => {
+        axios(options).then((response) => {
             console.log(response);
         }).catch((error) => {
             console.log(error);
@@ -109,6 +108,11 @@ class CreateHomes extends Component {
             <div>
                 <Card>
                     <p>Registrate tu casa</p> 
+                    <TextField
+                        id="tittle"
+                        value={this.state.title}
+                        onChange={this.handleTitle}
+                    />   
                     <TextField
                         id="address"
                         value={this.state.address}
