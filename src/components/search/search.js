@@ -20,7 +20,7 @@ class SearchForm extends Component {
     handleClick = (event) => {
         event.preventDefault();
         const url = "http://localhost:3000/homes/search?city="+this.state.search;
-        axios.get(url,{headers:{token:this.props.token}}).then((response) => {
+        axios.get(url,{headers:{token: this.props.token}}).then((response) => {
             console.log(response);
             this.props.handleHomeSearch(response.data.homes)
         }).catch((error) => {

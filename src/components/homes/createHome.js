@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
-import MyMapComponent from '../maps/homeMap'
+import MyMapComponent from '../maps/homeMap';
 
 
 
@@ -20,11 +20,8 @@ class CreateHomes extends Component {
         beds:"",
         datesNotAvailable:"",
         city:"",
-        geoSearchArray:""
-    }
-
-    returnCoordinates = () => {
-        
+        geoSearchArray:"",
+        token:""
     }
 
     makeGeoArray = () => {
@@ -44,7 +41,6 @@ class CreateHomes extends Component {
         this.setState({
             address: event.target.value
         })
-        makeGeoArray();
     }
 
     handleCapacity = (event) => {
@@ -87,21 +83,24 @@ class CreateHomes extends Component {
     this.setState({
         city: event.target.value
     })
-    makeGeoArray();
+    
     }
 
     handleClick = (event) => {
-        event.preventDefault();
-        const url = "http://localhost:3000/users/signup";
-        axios.post(url, {user: this.state}).then((response) => {
+        const url = "http://localhost:3000/homes";
+        console.log(this.props.token);
+        const options = {
+            method: 'POST',
+            headers: { token : this.props.token },
+            data: {home:this.state},
+            url,
+          };
+        axios.post(options).then((response) => {
             console.log(response);
-            this.props.handleUser(true,response.token);
         }).catch((error) => {
             console.log(error);
         })
     }
-
-    
 
     render(){
 

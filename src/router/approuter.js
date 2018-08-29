@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Router, Route, Switch, Link, BrowserRouter} from 'react-router-dom';
-import CreateHome from '../pages/createHome';
+import CreateHomes from '../pages/createHome';
 import Home from '../pages/home';
 import MakeReservation from '../pages/makeReservation';
 import SignUp from '../pages/signup';
@@ -49,7 +49,7 @@ class AppRouter extends Component {
                     </ul>
                     <Switch>        
                         <Route path="/" component={Home} exact={true}/>
-                        <PrivateRoute path="/create" component={CreateHome} isLoggedIn={this.state.isLoggedIn}/>
+                        <PrivateRoute path="/create" component={CreateHomes} isLoggedIn={this.state.isLoggedIn} token={this.state.token}/>
                         <PublicRoute path="/signup" component={SignUp} handleUser={this.handleUser} isLoggedIn={this.state.isLoggedIn}/>
                         <PublicRoute path="/login" component={Login} handleUser={this.handleUser} isLoggedIn={this.state.isLoggedIn}/>
                         <PrivateRoute path="/reservation" component={MakeReservation} isLoggedIn={this.state.isLoggedIn}/>

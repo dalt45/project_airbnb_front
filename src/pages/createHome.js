@@ -5,7 +5,7 @@ class CreateHome extends Component {
     render(){
         return(
             <div>
-                <CreateHomes />
+                <CreateHomes token={this.props.token}/>
             </div>
         )
     }
